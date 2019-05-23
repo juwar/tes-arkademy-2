@@ -24,7 +24,7 @@
 										    	<input type="text" class="form-control" id="nama" placeholder="Nama">
 										    </div>
 										    <div class="col-md-4">
-										      	<button  class="btn btn-primary luas" id="aksi" onclick="aksi()" id="tambah_programmer">Tambah Programmer</button>
+										      	<button  class="btn btn-primary luas" id="aksi" onclick="aksi()" >Tambah Programmer</button>
 										    </div>
 										</div>
 									
@@ -50,12 +50,12 @@
 									<div class="nama">
 										<h5><?php echo $fetch["name"]; ?></h5>
 									</div>
-									<div class="skill" id="jumlah-<?php echo $fetch["id"]; ?>">
+									<div class="skill">
 										<?php 
 					                      $idskill= $fetch["id"];
 
 					                      $q = mysqli_query($koneksi,"SELECT * FROM skill WHERE user_id = '".$idskill."'");
-					                      $jumlah = 0;
+					         
 					                      while ($f  = mysqli_fetch_array($q)) {
 					                          echo $f["name"].',';
 					                      }
@@ -70,7 +70,7 @@
 									    	<input type="text" class="form-control" placeholder="Skills" id="skills-<?php echo $fetch["id"] ?>">
 									    </div>
 									    <div class="col">
-									      	<button  class="btn btn-primary luas" id="tambah_programmer" onclick="tambah(<?php echo $fetch["id"] ?>)">Tambah Skill</button>
+									      	<button  class="btn btn-primary luas" onclick="tambah(<?php echo $fetch["id"] ?>)">Tambah Skill</button>
 									    </div>
 									</div>								
 								</center>
